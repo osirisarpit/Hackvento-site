@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 72px;
+  padding: 0 60px;
+z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+pointer-events: none;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+  box-sizing: border-box;
+  transition: height 0.3s ease;
+}
+
+.nav-logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: black;
+
+  text-shadow:
+    0 0 8px rgba(179, 0, 0, 0.6),
+    0 0 18px rgba(179, 0, 0, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #e6e6e6;
+
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Mobile menu button styles */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  pointer-events: auto;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: #e6e6e6;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  transform-origin: center;
+  display: block;
+}
+
+.hamburger-line.line1-open {
+  background: #b30000;
+  transform: rotate(45deg);
+}
+
+.hamburger-line.line2-open {
+  opacity: 0;
+}
+
+.hamburger-line.line3-open {
+  background: #b30000;
+  transform: rotate(-45deg);
+}
+
+/* Mobile navigation links */
+@media (max-width: 768px) {
+  .nav-links.mobile-active {
+    display: flex !important;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 72px);
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    backdrop-filter: none;
+    gap: 30px;
+  }
+  
+  .nav-links.mobile-active li {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .nav-links.mobile-active li:hover {
+    color: #ff4d4d;
+  }
+  
+  .nav-links.mobile-active li:hover::after {
+    width: 100%;
+  }
+}
+
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #b30000;
+  box-shadow: 0 0 10px rgba(179, 0, 0, 0.8);
+  transition: width 0.35s ease;
+}
+
+.nav-links li:hover {
+  color: #ff4d4d;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 30px;
+  }
+  
+  .nav-links {
+    gap: 24px;
+  }
+  
+  .nav-links li {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    height: 60px;
+  }
+  
+  .nav-logo {
+    font-size: 18px;
+  }
+  
+  .nav-links {
+    gap: 16px;
+  }
+  
+  .nav-links li {
+    font-size: 12px;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .nav-links:not(.mobile-active) {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0 15px;
+    height: 50px;
+  }
+  
+  .nav-logo {
+    font-size: 16px;
+  }
+  
+  .nav-links {
+    gap: 12px;
+  }
+  
+  .nav-links li {
+    font-size: 11px;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .nav-links:not(.mobile-active) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 10px;
+    height: 46px;
+  }
+  
+  .nav-logo {
+    font-size: 14px;
+  }
+  
+  .mobile-menu-btn {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* iPhone 14 Pro Max specific */
+@media screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+  .navbar {
+    padding: 0 20px;
+    height: 54px;
+  }
+  
+  .nav-logo {
+    font-size: 18px;
+  }
+  
+  .mobile-menu-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Samsung Galaxy S20 Ultra specific */
+@media screen and (device-width: 412px) and (device-height: 915px) and (-webkit-device-pixel-ratio: 3.5) {
+  .navbar {
+    padding: 0 18px;
+    height: 52px;
+  }
+  
+  .nav-logo {
+    font-size: 17px;
+  }
+  
+  .mobile-menu-btn {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* iPhone SE specific */
+@media screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .navbar {
+    padding: 0 12px;
+    height: 48px;
+  }
+  
+  .nav-logo {
+    font-size: 15px;
+  }
+  
+  .mobile-menu-btn {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* iPhone XR specific */
+@media screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .navbar {
+    padding: 0 16px;
+    height: 50px;
+  }
+  
+  .nav-logo {
+    font-size: 16px;
+  }
+  
+  .mobile-menu-btn {
+    width: 26px;
+    height: 26px;
+  }
+}

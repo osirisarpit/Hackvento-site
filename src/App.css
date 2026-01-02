@@ -1,0 +1,51 @@
+/* Additional app-specific styles can go here */
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Ensure proper viewport behavior on mobile */
+@viewport {
+  width: device-width;
+  initial-scale: 1.0;
+}
+
+/* Device-specific optimizations */
+/* iPhone 14 Pro Max */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+    .hero {
+      min-height: 100vh;
+    }
+  }
+}
+
+/* Samsung Galaxy S20 Ultra */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (device-width: 412px) and (device-height: 915px) and (-webkit-device-pixel-ratio: 3.5) {
+    .hero {
+      min-height: 100vh;
+    }
+  }
+}
+
+/* iPhone SE */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+    .hero {
+      min-height: 100vh;
+    }
+  }
+}
+
+/* iPhone XR */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    .hero {
+      min-height: 100vh;
+    }
+  }
+}
